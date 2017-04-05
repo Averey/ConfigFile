@@ -1,0 +1,37 @@
+set guifont=*.
+
+"为.txt文件设置特定的字体
+autocmd BufEnter *.txt set guifont=Arial\ 12
+
+colorscheme desert
+
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+set laststatus=2
+
+"ctrl+f12切换菜单显示
+set guioptions-=m
+set guioptions-=T
+map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
+ 	\set guioptions-=T <Bar>
+ 	\set guioptions-=m <bar>
+ 	\else <Bar>
+ 	\set guioptions+=T <Bar>
+ 	\set guioptions+=m <Bar>
+ 	\endif<CR>
+
+
+set cursorline
+set cursorcolumn
+
+set spell
+
+
+
+"常用快捷键映射
+map <C-s> :w<cr>
+vmap <C-c>  y
+imap <C-p> <esc>P
+vmap <C-x> x
+map <C-n> :browse confirm e<cr>
+map <C-S-s> :browse comfirm saveas<cr>
+
