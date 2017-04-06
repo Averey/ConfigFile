@@ -1,11 +1,23 @@
-set guifont=*.
-
 " 让配置变更立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file.
+
 
 "为.txt文件设置特定的字体
 autocmd BufEnter *.txt set guifont=Arial\ 12
 
+"设置字体
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 14
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h14:cANSI
+  endif
+endif
 
 "界面设置
 "--------------------
@@ -19,6 +31,17 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
+
+"ctrl+f12切换菜单显示
+"----------------------------------------------
+map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
+ 	\set guioptions-=T <Bar>
+ 	\set guioptions-=m <bar>
+ 	\else <Bar>
+ 	\set guioptions+=T <Bar>
+ 	\set guioptions+=m <Bar>
+ 	\endif<CR>
+
 
 
 " 辅助信息
@@ -36,16 +59,6 @@ set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
 
-
-"ctrl+f12切换菜单显示
-"----------------------------------------------
-map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
- 	\set guioptions-=T <Bar>
- 	\set guioptions-=m <bar>
- 	\else <Bar>
- 	\set guioptions+=T <Bar>
- 	\set guioptions+=m <Bar>
- 	\endif<CR>
 
 
 let mapleader=";"
@@ -67,8 +80,8 @@ map <C-n> :browse confirm e<cr>
 map <C-S-s> :browse comfirm saveas<cr>
 
 "设置常用操作
-nmap lb 0
-nmap le $
+nmap <Leader>b 0
+nmap <Leader>e $
 vnoremap <Leader>y "+y	" 设置快捷键将选中文本块复制至系统剪贴板
 nmap <Leader>p "+p	" 设置快捷键将系统剪贴板内容粘贴至 vim
 nmap <Leader>q :q<CR>
@@ -96,6 +109,7 @@ Plugin 'vim-scripts/phd'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdcommenter'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
