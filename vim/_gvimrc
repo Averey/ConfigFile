@@ -1,0 +1,13 @@
+
+set nocompatible    " no compatible with vi
+filetype plugin on  " load the ftplugin.vim
+filetype indent on  " load the indent.vim
+syntax enable       " source the syntax.vim
+let mapleader=";"
+
+" 加载其他配置文件
+let configPath = 'F:\\GitRepo\\ConfigFile\\vim\\'
+let configFile = ['basic_vimrc', 'plugin_vimrc']
+for config in configFile
+    exec 'source ' . configPath . config
+endfor
