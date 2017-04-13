@@ -14,6 +14,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'scrooloose/nerdtree'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -42,3 +43,11 @@ let g:NERDCompactSexyComs = 1   " Use compact syntax for prettified multi-line c
 let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDCommentEmptyLines = 1 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1    " Enable trimming of trailing whitespace when uncommenting
+
+
+
+
+" -------------nerdtree setting--------------
+map <Leader>t :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
