@@ -3,6 +3,7 @@ set nocompatible    " no compatible with vi
 filetype plugin on  " load the ftplugin.vim
 filetype indent on  " load the indent.vim
 syntax enable       " source the syntax.vim
+
 let mapleader=","
 
 " 加载其他配置文件
