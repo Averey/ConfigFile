@@ -12,15 +12,19 @@ set linebreak   " wrap line on 'word' boundaries
 set splitright  " Vertical splits use right half of screen
 set tildeop     " use ~ to toggle case as an operator, not a motion
 
-
 set expandtab	 	" 将制表符扩展为空格
 set tabstop=4		" 设置编辑时制表符占用空格数
 set shiftwidth=4	" 设置格式化时制表符占用空格数
 set softtabstop=4	" 让 vim 把连续数量的空格视为一个制表符
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示 
+set autoindent
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 set spell
 set spelllang=en_us,cjk
+
+set lines=30 columns=120   
 
 "常用快捷键映射
 map <C-s> :w<cr>
@@ -45,6 +49,7 @@ set incsearch   " do incremental searching
 set hlsearch
 set ignorecase
 command! C nohlsearch   " use :C to clear hlsearch
+noremap <silent> <C-l> :nohlsearch<CR> 
 
 cabbrev help tab help   " open help in a new tab
 
