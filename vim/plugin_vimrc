@@ -19,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'pangloss/vim-javascript'
+Plugin 'kien/ctrlp.vim'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -35,7 +36,7 @@ let g:molokai_original = 1
 
 "Indent Guides 配置
 "------------------------------	
-let g:indent_guides_enable_on_vim_startup=1		" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=0		" 随 vim 自启动
 let g:indent_guides_start_level=2			" 从第二层开始可视化显示缩进
 let g:indent_guides_guide_size=1			" 色块宽度
 " 快捷键 i 开/关缩进可视化
@@ -76,3 +77,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+
+" ---------------ctrlp--------------------------
+
