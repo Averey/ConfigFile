@@ -10,11 +10,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -25,7 +27,7 @@ filetype plugin indent on
 set background=dark
 colorscheme molokai
 let g:molokai_original = 1
-"colorscheme solarized
+" colorscheme solarized
 "colorscheme phd
 
 
@@ -37,13 +39,22 @@ let g:indent_guides_guide_size=1			" 色块宽度
 " 快捷键 i 开/关缩进可视化
 nmap <silent> <Leader>i <Plug>IndentGuidesToggle	
 
+
+
+"-------------airline setting--------------------
+" better font rendering in windows gvim
+set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
+
+let g:airline_powerline_fonts = 1
+let g:airline_detect_spell = 0
+
+
 " -------------nerdcommenter setting--------------
 let g:NERDSpaceDelims = 1   " Add spaces after comment delimiters by default
 let g:NERDCompactSexyComs = 1   " Use compact syntax for prettified multi-line comments
 let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDCommentEmptyLines = 1 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1    " Enable trimming of trailing whitespace when uncommenting
-
 
 
 
