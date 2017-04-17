@@ -16,7 +16,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'Valloric/YouCompleteMe'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
