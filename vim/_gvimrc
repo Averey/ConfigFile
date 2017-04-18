@@ -3,8 +3,10 @@ set nocompatible    " no compatible with vi
 filetype plugin on  " load the ftplugin.vim
 filetype indent on  " load the indent.vim
 syntax enable       " source the syntax.vim
+runtime macros/matchit.vim
 
 let mapleader=","
+noremap \ ,
 
 " 加载其他配置文件
 let configPath = 'F:\\GitRepo\\ConfigFile\\vim\\'
