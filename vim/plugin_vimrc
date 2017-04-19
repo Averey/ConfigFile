@@ -84,8 +84,16 @@ let g:syntastic_check_on_wq = 0
 
 
 " ---------------ctrlp--------------------------
+if executable('ag')
+    " user Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+    " use ag in CtrlP for listing files
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 
 "-----------------ag----------------------------
 let g:ag_highlight =  1
 nmap <C-n> :AgFile! ""<left>
+
+
