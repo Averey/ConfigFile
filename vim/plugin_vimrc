@@ -88,3 +88,4 @@ let g:syntastic_check_on_wq = 0
 
 "-----------------ag----------------------------
 let g:ag_highlight =  1
+nmap <C-n> :AgFile! ""<left>

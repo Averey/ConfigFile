@@ -32,7 +32,8 @@ vmap <C-c>  y
 vmap <C-x> x
 map <silent> <C-a> <esc>ggVG<CR>
 map <silent> <A-l> :ls<CR>
-
+nmap <silent> gb :bnext<CR>
+nmap <silent> gB :bprevious<CR>
 nmap <Leader>b 0
 nmap <Leader>e $
 noremap <silent> Y y$
