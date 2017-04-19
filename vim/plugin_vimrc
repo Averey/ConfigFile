@@ -20,6 +20,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'rking/ag.vim'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -83,3 +85,6 @@ let g:syntastic_check_on_wq = 0
 
 " ---------------ctrlp--------------------------
 
+
+"-----------------ag----------------------------
+let g:ag_highlight =  1

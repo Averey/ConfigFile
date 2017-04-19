@@ -29,15 +29,13 @@ set lines=30 columns=120
 "常用快捷键映射
 map <C-s> :w<cr>
 vmap <C-c>  y
-imap <C-p> <esc>P
 vmap <C-x> x
-map <C-n> :browse confirm e<cr>
-map <C-S-s> :browse comfirm saveas<cr>
+map <silent> <C-a> <esc>ggVG<CR>
+map <silent> <A-l> :ls<CR>
 
-"设置常用操作
 nmap <Leader>b 0
 nmap <Leader>e $
-noremap <silent> Y y$   " use 'Y' to yank to the end of a line, instead of the whole line
+noremap <silent> Y y$
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
 nmap <Leader>q :q<CR>
@@ -117,3 +115,20 @@ set cursorline
 set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
+
+
+"自动调节quickfix高度
+ au FileType qf call AdjustWindowHeight(3, 15)
+function! AdjustWindowHeight(minheight, maxheight)
+    let l = 1
+    let n_lines = 0
+    let w_width = winwidth(0)
+    while l <= line('$')
+        " number to float for division
+        let l_len = strlen(getline(l)) + 0.0
+        let line_width = l_len/w_width
+        let n_lines += float2nr(ceil(line_width))
+        let l += 1
+    endw
+    exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
