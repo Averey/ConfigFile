@@ -41,16 +41,21 @@ vnoremap <Leader>y "+y
 nmap <Leader>p "+p
 nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
-nmap <Leader>M %	" 定义快捷键在结对符之间跳转
+nmap <Leader>M %
+" 窗口间移动
+nmap <silent> <C-h> <C-w>h
+nmap <silent> <C-j> <C-w>j
+nmap <silent> <C-k> <C-w>k
+nmap <silent> <C-l> <C-w>l
 
 "搜索设置
 set incsearch   " do incremental searching
 set hlsearch
 set ignorecase
+nmap <silent> <Leader>c :nohl<CR>
 command! C nohlsearch   " use :C to clear hlsearch
-noremap <silent> <C-l> :nohlsearch<CR> 
 
-cabbrev help tab help   " open help in a new tab
+cabbrev help tab help
 
 if has('mouse')
     set mouse=a     " enable mouse if the mouse work fine in the terminal
