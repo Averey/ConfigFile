@@ -68,6 +68,7 @@ let NERDTreeIgnore = ['node_modules$[[dir]]']
 map <Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+map <C-b> :NERDTreeToggle<CR>B
 
 
 
