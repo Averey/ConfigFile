@@ -19,9 +19,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'pangloss/vim-javascript'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -85,20 +85,41 @@ let g:syntastic_check_on_wq = 0
 
 
 " ---------------ctrlp--------------------------
-"" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+"use  The Silver Searcher
+" if executable('ag')
+"   " Use ag over grep
+"   set grepprg=ag\ --nogroup\ --nocolor
+"   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"   let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+"   " " ag is fast enough that CtrlP doesn't need to cache
+"   let g:ctrlp_use_caching = 0
+" endif
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
-
-  " " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+" use ripgrep
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+    let g:ctrlp_use_caching = 0
 endif
 
-"-----------------ag----------------------------
-let g:ag_highlight =  1
-nmap <C-n> :AgFile! ""<left>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_working_path_mode = 'rw'
+
+" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+map <A-l> :CtrlPBuffer<CR>
+nmap <A-p> :CtrlPMRU<CR>
 
 
+" -----------------------ack.vim----------------
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+endif
+let g:ackhighlight = 1
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
