@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/phd'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'yggdroot/indentline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
@@ -28,8 +28,9 @@ call vundle#end()
 filetype plugin indent on
 
 
-"配色方案
-"----------------------------
+
+" color scheme
+"----------------------------------------
 set background=dark
 colorscheme molokai
 let g:molokai_original = 1
@@ -37,25 +38,28 @@ let g:molokai_original = 1
 "colorscheme PhD 
 
 
-"Indent Guides 配置
-"------------------------------	
-let g:indent_guides_enable_on_vim_startup=0		" 随 vim 自启动
-let g:indent_guides_start_level=2			" 从第二层开始可视化显示缩进
-let g:indent_guides_guide_size=1			" 色块宽度
-" 快捷键 i 开/关缩进可视化
-nmap <silent> <Leader>i <Plug>IndentGuidesToggle	
+
+" Indent line 
+"-----------------------------------------	
+" let g:indentLine_char = '┊'
+let g:indentLine_char = '¦'
+nmap <Leader>i :IndentLinesToggle<CR>
 
 
 
-"-------------airline setting--------------------
+
+
+" airline setting
+"-----------------------------------------
 " better font rendering in windows gvim
 set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
 let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
 
 
-"
-" -------------nerdcommenter setting--------------
+
+" nerdcommenter setting
+" ----------------------------------------
 let g:NERDSpaceDelims = 1   " Add spaces after comment delimiters by default
 let g:NERDCompactSexyComs = 1   " Use compact syntax for prettified multi-line comments
 let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left instead of following code indentation
@@ -65,7 +69,8 @@ let NERDTreeIgnore = ['node_modules$[[dir]]']
 
 
 
-" -------------nerdtree setting--------------
+" nerdtree setting
+" ----------------------------------------
 map <Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -73,7 +78,8 @@ map <C-b> :NERDTreeToggle<CR>B
 
 
 
-" ---------------syntastic ---------------------
+" syntastic
+" ----------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -85,7 +91,8 @@ let g:syntastic_check_on_wq = 0
 
 
 
-" ---------------ctrlp--------------------------
+" ctrlp
+" ---------------------------------------
 "use  The Silver Searcher
 " if executable('ag')
 "   " Use ag over grep
@@ -116,7 +123,8 @@ nmap <A-p> :CtrlPMRU<CR>
 
 
 
-" ---------------easy align----------------------
+" easy align
+" ---------------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -124,7 +132,8 @@ nmap ga <Plug>(EasyAlign)
 
 
 
-" -----------------------ack.vim----------------
+" ack.vim
+" --------------------------------------
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
 endif
