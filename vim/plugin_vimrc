@@ -105,9 +105,7 @@ endif
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
 let g:ctrlp_working_path_mode = 'rw'
-
 " let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -115,6 +113,7 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 map <A-l> :CtrlPBuffer<CR>
 nmap <A-p> :CtrlPMRU<CR>
+
 
 
 " ---------------easy align----------------------
