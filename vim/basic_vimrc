@@ -24,7 +24,17 @@ set spell
 set spelllang=en_us,cjk
 
 set lines=40 columns=120
-map <C-m> :set lines=999 columns=999<CR>
+map <F11> :call MyFullScreenToggle()<CR>
+let fullScreen = 0
+function! MyFullScreenToggle()
+    if !g:fullScreen
+        set lines=999 columns=999
+        let g:fullScreen = 1
+    else
+        set lines=40 columns=120
+        let g:fullScreen = 0
+    endif
+endfunction
 
 "常用快捷键映射
 map <C-s> :w<cr>

@@ -22,6 +22,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
+Plugin 'junegunn/vim-easy-align'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -102,3 +103,9 @@ let g:ag_highlight =  1
 nmap <C-n> :AgFile! ""<left>
 
 
+
+" ---------------easy align----------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
