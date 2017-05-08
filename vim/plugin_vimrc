@@ -17,12 +17,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'mileszs/ack.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'SirVer/ultisnips'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -46,6 +47,10 @@ let g:indentLine_char = '¦'
 nmap <Leader>i :IndentLinesToggle<CR>
 
 
+
+
+" fugitive
+" ----------------------------------------
 
 
 
@@ -74,20 +79,6 @@ let NERDTreeIgnore = ['node_modules$[[dir]]']
 map <Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-map <C-b> :NERDTreeToggle<CR>B
-
-
-
-" syntastic
-" ----------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 
 
@@ -123,6 +114,14 @@ nmap <A-p> :CtrlPMRU<CR>
 
 
 
+" emmet
+" ---------------------------------------
+let g:user_emmet_install_global = 0
+let g:user_emmet_leader_key='<C-y>'
+autocmd FileType html,css EmmetInstall
+
+
+
 " easy align
 " ---------------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -139,4 +138,23 @@ if executable('rg')
 endif
 let g:ackhighlight = 1
 cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>g :Ack!<Space>
+
+
+
+" editorConfig
+" --------------------------------------
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*' ]
+let g:EditorConfig_exec_path = 'C:\ProgramData\chocolatey\bin'
+
+
+
+" UltiSnips
+" --------------------------------------
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
