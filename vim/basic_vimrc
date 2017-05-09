@@ -1,5 +1,7 @@
 "" ------------------------------- General Settings  ----------------------------------------
 
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -99,8 +101,9 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-      set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+      " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
       " set guifont=Fira\ Mono\ for\ Powerline:h12
+      set guifont=Hack:h12
   endif
 endif
 
@@ -133,7 +136,7 @@ map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
 "----------------------
 " 总是显示状态栏
 set laststatus=2
-let g:Powerline_colorscheme='solarized256'
+" let g:Powerline_colorscheme='solarized256'
 " 显示光标当前位置
 set ruler
 " 开启行号显示
