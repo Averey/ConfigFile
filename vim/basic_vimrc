@@ -3,6 +3,8 @@
 " autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview
 
+autocmd GUIEnter * set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:hor10-Cursor/lCursor
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 

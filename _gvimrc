@@ -14,3 +14,5 @@ let configFile = ['basic_vimrc', 'plugin_vimrc']
 for config in configFile
     exec 'source ' . configPath . config
 endfor
+
+set gcr=i:ver10-Cursor/lCursor
