@@ -7,11 +7,12 @@ autocmd GUIEnter * set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:hor10-
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
+set autoread    " reload files changed outside vim
 set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set history=500 " keep 500 lines of command line history
 set linebreak   " wrap line on 'word' boundaries
+set nowrap
 set splitright  " Vertical splits use right half of screen
 set tildeop     " use ~ to toggle case as an operator, not a motion
 
@@ -26,6 +27,9 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 set spell
 set spelllang=en_us,cjk
 
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
 
 set relativenumber
 function! NumberToggle()
