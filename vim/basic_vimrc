@@ -75,7 +75,7 @@ nmap <silent> <C-l> <C-w>l
 set incsearch   " do incremental searching
 set hlsearch
 set ignorecase
-nmap <silent> <Leader>c :nohl<CR>
+nmap <silent> <Leader>cl :nohl<CR>
 command! C nohlsearch   " use :C to clear hlsearch
 
 cabbrev help tab help
