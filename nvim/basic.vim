@@ -1,8 +1,13 @@
 "设置字体
-autocmd VimEnter * :GuiFont DejaVu\ Sans\ Mono\ for\ Powerline:h12<cr>
+" autocmd VimEnter * :GuiFont DejaVu\ Sans\ Mono\ for\ Powerline:h12<cr>
+" autocmd GUIEnter * :GuiFont Hack:h18<cr>
+
+" set guifont=Hack:h18:cANSI
+
+let g:python3_host_prog = 'C:\Program Files (x86)\Python36-32\Python'
+
 
 set mouse=a
-" 在不同模式使用不同的鼠标形状，期待已久的特性，终于在neovim里实现了
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 "set spell

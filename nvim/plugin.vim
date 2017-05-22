@@ -6,10 +6,12 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-completion-manager'
+
 
 call plug#end()
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "配色方案
 "----------------------------
 set background=dark
