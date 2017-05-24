@@ -7,6 +7,8 @@ Plug 'vim-scripts/phd'
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'ayu-theme/ayu-vim'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
@@ -35,13 +37,20 @@ call plug#end()
 
 " color scheme
 "----------------------------------------
-set background=dark
-colorscheme hybrid
-" colorscheme molokai
+"set background=dark
+"colorscheme hybrid
+
 " let g:molokai_original = 1
+" colorscheme molokai
 "colorscheme solarized
 "colorscheme PhD 
-
+"
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
+let g:space_vim_dark_background = 234
+colorscheme space-vim-dark
 
 
 " easy align
@@ -107,6 +116,7 @@ let g:esearch = {
 map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
 map <a-p> :History<cr>
+map <a-h> :History:<cr>
 
 
 
