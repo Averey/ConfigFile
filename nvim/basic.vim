@@ -66,3 +66,4 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <leader>n :call NumberToggle()<cr>
+
