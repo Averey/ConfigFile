@@ -79,7 +79,6 @@ let g:NERDCompactSexyComs = 1   " Use compact syntax for prettified multi-line c
 let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDCommentEmptyLines = 1 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1    " Enable trimming of trailing whitespace when uncommenting
-let NERDTreeIgnore = ['node_modules$[[dir]]']
 
 
 
@@ -90,6 +89,7 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeIgnore = ['node_modules$[[dir]]']
 let g:NERDTreeWinSize = 30
 
 

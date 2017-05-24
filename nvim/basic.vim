@@ -41,6 +41,7 @@ nmap <silent> <C-l> <C-w>l
 set ignorecase
 nmap <silent> <Leader>c :nohl<CR>
 command! C nohlsearch   " use :C to clear hlsearch
+nmap <silent> <Leader>cl :nohl<CR>
 
 set autoread
 
