@@ -3,8 +3,7 @@
 " autocmd GUIEnter * :GuiFont Hack:h18<cr>
 
 " set guifont=Hack:h18:cANSI
-
-let g:python3_host_prog = 'C:\Program Files (x86)\Python36-32\Python'
+" let g:python3_host_prog = 'C:\Program Files (x86)\Python36-32\Python'
 
 
 set mouse=a
@@ -43,5 +42,26 @@ set ignorecase
 nmap <silent> <Leader>c :nohl<CR>
 command! C nohlsearch   " use :C to clear hlsearch
 
+set autoread
+
+set nowrap
+set lines=40 columns=120
+
+set autoindent
+set smartindent
+set expandtab	 	" 将制表符扩展为空格
+set tabstop=4		" 设置编辑时制表符占用空格数
+set shiftwidth=4	" 设置格式化时制表符占用空格数
+set softtabstop=4	" 让 vim 把连续数量的空格视为一个制表符
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 
+set relativenumber
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader>n :call NumberToggle()<cr>
