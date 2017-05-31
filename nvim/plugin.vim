@@ -25,9 +25,6 @@ Plug 'eugen0329/vim-esearch'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
-
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'mileszs/ack.vim'
 
 call plug#end()
@@ -104,10 +101,6 @@ let g:esearch = {
     \ 'use'        : ['visual', 'hlsearch', 'last'],
     \}
 
-
-
-
-"------------goyo & limelight-----------------
 
 
 
