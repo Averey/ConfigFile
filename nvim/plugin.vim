@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
 Plug 'tomasr/molokai'
-Plug 'vim-scripts/phd'
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
@@ -26,9 +25,6 @@ Plug 'eugen0329/vim-esearch'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
-
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'mileszs/ack.vim'
 
 call plug#end()
@@ -42,14 +38,15 @@ call plug#end()
 
 " let g:molokai_original = 1
 " colorscheme molokai
+
 "colorscheme solarized
-"colorscheme PhD 
 "
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
-let g:space_vim_dark_background = 234
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
+ 
+let g:space_vim_dark_background = 235
 colorscheme space-vim-dark
 
 
@@ -73,10 +70,6 @@ nmap <Leader>i :IndentLinesToggle<CR>
 "-------------airline setting--------------------
 let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
-" nayaovim 使用airline的样式有点问题，目前的折中方案
-let g:airline_left_sep='' 
-let g:airline_right_sep='' 
-
 
 
 " -------------nerdtree setting--------------
@@ -93,6 +86,9 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-ternjs
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+" Move up and down in autocomplete with <a-j> and <a-k>
+inoremap <expr> <A-j> ("\<C-n>")
+inoremap <expr> <A-k> ("\<C-p>")
 
 
 
@@ -109,10 +105,6 @@ if !exists('g:esearch') | let g:esearch = {} | endif
 let g:esearch.adapter = 'ag'
 let g:esearch.out = 'qflist'
 let g:esearch.backend = 'nvim'
-
-
-
-"------------goyo & limelight-----------------
 
 
 

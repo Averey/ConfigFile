@@ -1,10 +1,4 @@
-"设置字体
-" autocmd VimEnter * :GuiFont DejaVu\ Sans\ Mono\ for\ Powerline:h12<cr>
-" autocmd GUIEnter * :GuiFont Hack:h18<cr>
-
-" set guifont=Hack:h18:cANSI
-" let g:python3_host_prog = 'C:\Program Files (x86)\Python36-32\Python'
-
+syntax enable
 
 set mouse=a
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -54,7 +48,7 @@ set expandtab	 	" 将制表符扩展为空格
 set tabstop=4		" 设置编辑时制表符占用空格数
 set shiftwidth=4	" 设置格式化时制表符占用空格数
 set softtabstop=4	" 让 vim 把连续数量的空格视为一个制表符
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+"autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 
 set relativenumber
