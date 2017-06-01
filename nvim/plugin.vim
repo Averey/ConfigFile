@@ -97,14 +97,18 @@ let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on
 
 
 " -------------ESearch-------------------------
-let g:esearch = {
-    \ 'adapter'    : 'rg',
-    \ 'backend'    : 'nvim',
-    \ 'out'        : 'win',
-    \ 'batch_size' : 1000,
-    \ 'use'        : ['visual', 'hlsearch', 'last'],
-    \}
+"let g:esearch = {
+    "\ 'adapter'    : 'rg',
+    "\ 'backend'    : 'nvim',
+    "\ 'out'        : 'win',
+    "\ 'batch_size' : 1000,
+    "\ 'use'        : ['visual', 'hlsearch', 'last'],
+    "\}
 
+if !exists('g:esearch') | let g:esearch = {} | endif
+let g:esearch.adapter = 'ag'
+let g:esearch.out = 'qflist'
+let g:esearch.backend = 'nvim'
 
 
 
@@ -128,3 +132,5 @@ endif
 let g:ackhighlight = 1
 cnoreabbrev Ack Ack!
 nnoremap <Leader>g :Ack!<Space>
+nnoremap # yaw :Ack!<Space><C-r>"
+
