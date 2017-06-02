@@ -27,6 +27,11 @@ Plug 'junegunn/fzf.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
+
+Plug 'SirVer/ultisnips'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-ragtag'
+
 call plug#end()
 
 
@@ -120,3 +125,22 @@ endif
 let g:ackhighlight = 1
 cnoreabbrev Ack Ack!
 nnoremap <Leader>g :Ack!<Space>
+
+
+
+" ultisnips
+" ---------------------------------------------
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+
+
+" auto-pairs
+" --------------------------------------------------
+"  avoid key mapping conflict with fzf
+let g:AutoPairsShortcutToggle = 'M-p'
+
+
+
