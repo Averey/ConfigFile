@@ -27,6 +27,8 @@ Plug 'junegunn/fzf.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
+Plug 'w0rp/ale'
+
 call plug#end()
 
 
@@ -113,6 +115,11 @@ map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
 map <a-p> :History<cr>
 map <a-h> :History:<cr>
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 
@@ -126,3 +133,10 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>g :Ack!<Space>
 nnoremap # yaw :Ack!<Space><C-r>"
 
+
+"   ale
+"----------------------------------------
+let g:ale_sign_error = '×'
+let g:ale_sign_warning = '▌'
+"let g:ale_sign_warning = '⋯'
+"let g:ale_sign_warning = '░'
