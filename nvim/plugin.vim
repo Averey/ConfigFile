@@ -28,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 Plug 'w0rp/ale'
+Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
