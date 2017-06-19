@@ -8,6 +8,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'ayu-theme/ayu-vim'
+Plug 'joshdick/onedark.vim'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
@@ -29,8 +30,13 @@ Plug 'mileszs/ack.vim'
 
 
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-ragtag'
+
+Plug 'sheerun/vim-polyglot'
+
+Plug 'vim-syntastic/syntastic'
+
 
 call plug#end()
 
@@ -51,8 +57,11 @@ call plug#end()
 "let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
  
-let g:space_vim_dark_background = 235
-colorscheme space-vim-dark
+"let g:space_vim_dark_background = 235
+"colorscheme space-vim-dark
+
+syntax on
+colorscheme onedark
 
 
 " easy align
@@ -129,16 +138,20 @@ endif
 let g:ackhighlight = 1
 cnoreabbrev Ack Ack!
 nnoremap <Leader>g :Ack!<Space>
-nnoremap # yaw :Ack!<Space><C-r>"
+nnoremap # :Ack! <C-r><c-w><cr>
 
 
 
 " ultisnips
 " ---------------------------------------------
+set rtp+=E:\GitRepo\configFile
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir = GitRepo . 'mySnips'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
+
 
 
 
@@ -147,3 +160,16 @@ let g:UltiSnipsEditSplit="vertical"
 "  avoid key mapping conflict with fzf
 let g:AutoPairsShortcutToggle = 'M-p'
 
+
+
+" vim-Syntax
+" --------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['eslint']

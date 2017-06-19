@@ -42,6 +42,7 @@ set autoread
 set nowrap
 set lines=40 columns=120
 
+set cursorline
 set autoindent
 set smartindent
 set expandtab	 	" 将制表符扩展为空格

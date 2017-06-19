@@ -3,4 +3,4 @@
 " Guifont Space Mono for Powerline:h12
 " Guifont Consolas : h12
 "Guifont DejaVu Sans Mono for Powerline:h11
-Guifont mononoki:h13
+GuiFont mononoki:h13
