@@ -35,8 +35,8 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'vim-syntastic/syntastic'
-
+Plug 'w0rp/ale'
+Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
@@ -127,6 +127,11 @@ map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
 map <a-p> :History<cr>
 map <a-h> :History:<cr>
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 
@@ -162,14 +167,9 @@ let g:AutoPairsShortcutToggle = 'M-p'
 
 
 
-" vim-Syntax
-" --------------------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['eslint']
+"   ale
+"----------------------------------------
+let g:ale_sign_error = '×'
+let g:ale_sign_warning = '▌'
+"let g:ale_sign_warning = '⋯'
+"let g:ale_sign_warning = '░'
