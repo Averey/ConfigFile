@@ -3,6 +3,8 @@ syntax enable
 set mouse=a
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
+" 禁用python2 防止与3冲突
+ let g:loaded_python_provider = 1
 "set spell
 
 "常用快捷键映射
@@ -30,6 +32,10 @@ nmap <silent> <C-h> <C-w>h
 nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
 nmap <silent> <C-l> <C-w>l
+nmap <silent> <left> <C-w>4<
+nmap <silent> <right> <C-w>4>
+nmap <silent> <up> <C-w>4-
+nmap <silent> <down> <C-w>4+
 
 "搜索设置
 set ignorecase
