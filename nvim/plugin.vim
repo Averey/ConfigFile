@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
 Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-dark'
@@ -18,7 +17,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 
-" Plug 'roxma/nvim-completion-manager'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
@@ -36,6 +34,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'w0rp/ale'
+"Plug 'neomake/neomake'
 Plug 'tpope/vim-vinegar'
 
 call plug#end()
@@ -47,10 +46,8 @@ call plug#end()
 "set background=dark
 "colorscheme hybrid
 
-" let g:molokai_original = 1
 " colorscheme molokai
 
-"colorscheme solarized
 "
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
@@ -150,7 +147,7 @@ nnoremap # :Ack! <C-r><c-w><cr>
 " ultisnips
 " ---------------------------------------------
 set rtp+=E:\GitRepo\configFile
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
@@ -167,8 +164,16 @@ let g:AutoPairsShortcutToggle = 'M-p'
 
 
 
-"   ale
-"----------------------------------------
+"let g:neomake_javascript_eslint_maker = {
+    "\ 'args': ['--verbose'],
+    "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    "\ }
+"let g:neomake_javascript_enabled_makers = ['eslint']
+
+" ale
+" ----------------------------------------
+let g:ale_javascript_eslint_executable = 'eslint'
+let g:ale_javascript_eslint_use_global = 1
 let g:ale_sign_error = '×'
 let g:ale_sign_warning = '▌'
 "let g:ale_sign_warning = '⋯'
