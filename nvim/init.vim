@@ -1,6 +1,6 @@
 let GitRepo = 'E:\\GitRepo\\configFile\\'
-let mapleader=","
-noremap \ ,
+let mapleader=" "
+"noremap \ ,
 
 " 加载其他配置文件
 let configPath = GitRepo . 'nvim\\'
