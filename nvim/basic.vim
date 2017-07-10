@@ -69,19 +69,19 @@ function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
   else
-    set relativenumber
+    "set relativenumber
   endif
 endfunc
-nnoremap <leader>n :call NumberToggle()<cr>
+""nnoremap <leader>n :call NumberToggle()<cr>
 
 "智能tab补全
 function! Tab_Or_Complete()
     let currentLine = getline('.')
-    let currentPosition = col('.')
-    let beforeChar = strpart(currentLine, currentPosition-2, 1)
+    let currentColumn= col('.')
+    let beforeChar = strpart(currentLine, currentColumn-2, 1)
     let res = match(beforeChar, ' ')
 
-    if(res == -1 && currentPosition > 1)
+    if(res == -1 && currentColumn > 1)
         return "\<C-N>"
     else
         return "\<tab>"
@@ -89,3 +89,4 @@ function! Tab_Or_Complete()
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 inoremap <S-Tab> <C-p>
+
