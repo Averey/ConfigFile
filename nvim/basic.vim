@@ -17,7 +17,7 @@ nmap <Leader>p "+p
 map <C-s> :w<cr>
 vmap <C-c>  y
 vmap <C-x> x
-map <silent> <C-a> <esc>ggVG<CR>
+vmap <silent> <C-a> <esc>ggVG<CR>
 
 nmap <silent> gb :bnext<CR>
 nmap <silent> gB :bprevious<CR>
@@ -60,7 +60,7 @@ set cursorline
 set autoindent
 set smartindent
 set lines=40 columns=120
-set scrolloff=4     "4 lines above/below cursor when scrolling
+"set scrolloff=4     "4 lines above/below cursor when scrolling
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 
@@ -74,7 +74,7 @@ function! NumberToggle()
 endfunc
 ""nnoremap <leader>n :call NumberToggle()<cr>
 
-"智能tab补全
+智能tab补全
 function! Tab_Or_Complete()
     let currentLine = getline('.')
     let currentColumn= col('.')
@@ -88,5 +88,3 @@ function! Tab_Or_Complete()
     endif
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-inoremap <S-Tab> <C-p>
-
