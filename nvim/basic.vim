@@ -17,10 +17,6 @@ nmap <Leader>p "+p
 map <C-s> :w<cr>
 vmap <C-c>  y
 vmap <C-x> x
-<<<<<<< HEAD
-=======
-vmap <silent> <C-a> <esc>ggVG<CR>
->>>>>>> 489b008070d2cdfbfbc518614642da7f94c0179c
 
 nmap <silent> gb :bnext<CR>
 nmap <silent> gB :bprevious<CR>
