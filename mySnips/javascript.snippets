@@ -5,3 +5,54 @@ endsnippet
 snippet alog "angular $log"
 $log.info(${1:logText});
 endsnippet
+
+snippet db "javascript debugger"
+debugger;
+endsnippet
+
+snippet cb "class function bind"
+this.${1:function_name} = this.$1.bind(this);$0
+endsnippet
+
+snippet cf "class function without function keyword"
+${1:function_name}(){
+	$0
+}
+endsnippet
+
+snippet ngc "angular component" b
+(function () {
+  'use strict';
+
+  angular
+    .module('${3:moduleName}')
+    .component('${1:componentName}', {
+      templateUrl: '${2:templateUrl}',
+      controller: $1Controller,
+      controllerAs: 'vm',
+    });
+
+    /**@ngInject */
+    function $1Controller() {
+      var vm = this;
+
+	  $0
+    }
+})();
+endsnippet
+
+snippet rcl "common react class module"
+import React, { Component } from "react";
+
+class ${1:classname} extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+	$0
+  }
+}
+
+export default $1;
+endsnippet
