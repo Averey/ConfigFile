@@ -6,7 +6,6 @@ Plug 'tomasr/molokai'
 Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-dark'
-Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
 
 Plug 'junegunn/vim-easy-align'
@@ -15,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -29,7 +28,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 Plug 'mhinz/vim-startify'
 

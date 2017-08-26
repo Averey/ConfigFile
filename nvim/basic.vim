@@ -23,6 +23,7 @@ nmap <silent> gB :bprevious<CR>
 nmap <Leader>b 0
 nmap <Leader>e $
 " 窗口设置
+set splitright "split to right by default 
 nmap <silent> <C-h> <C-w>h
 nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
