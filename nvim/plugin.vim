@@ -3,7 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
 Plug 'tomasr/molokai'
-Plug 'w0ng/vim-hybrid'
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'joshdick/onedark.vim'
@@ -18,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ternjs/tern_for_vim', {'build': 'npm install'}
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -31,6 +31,8 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'w0rp/ale'
 
 Plug 'mhinz/vim-startify'
+
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -86,9 +88,10 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-ternjs
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
-" Move up and down in autocomplete with <a-j> and <a-k>
-inoremap <expr> <A-j> ("\<C-n>")
-inoremap <expr> <A-k> ("\<C-p>")
+set splitbelow
+set completeopt+=noselect
+set completeopt-=preview
+autocmd CompleteDone * pclose
 
 
 
