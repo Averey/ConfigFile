@@ -3,43 +3,57 @@ set mouse=a
 
 " 禁用python2 防止与3冲突
  let g:loaded_python_provider = 1
-"set spell
 
 " 默认键位优化
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
+nnoremap <silent> ' `
+nnoremap <silent> ` '
+
+xnoremap s :s//g<Left><Left>
+noremap <silent> - <C-^>
 
 "常用快捷键映射
-vnoremap <Leader>y "+y
-nmap <Leader>p "+p
-map <C-s> :w<cr>
-noremap <silent> Y y$
-nmap <Leader>q :q<CR>
-nmap <Leader>w :w<CR>
-nmap <Leader>m %
+noremap <C-s> :wa<CR>
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+nnoremap <silent> Y y$
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>m %
+nnoremap B 0
+nnoremap E $
 
-nmap <silent> gb :bnext<CR>
-nmap <silent> gB :bprevious<CR>
-nmap <Leader>b 0
-nmap <Leader>e $
 " 窗口设置
-nmap <silent> <C-h> <C-w>h
-nmap <silent> <C-j> <C-w>j
-nmap <silent> <C-k> <C-w>k
-nmap <silent> <C-l> <C-w>l
-nmap <silent> <left> <C-w>4<
-nmap <silent> <right> <C-w>4>
-nmap <silent> <up> <C-w>4-
-nmap <silent> <down> <C-w>4+
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <left> <C-w>4<
+nnoremap <right> <C-w>4>
+nnoremap <up> <C-w>4-
+nnoremap <down> <C-w>4+
 nnoremap <Leader>\ :vs<cr>
 nnoremap <Leader>- :sp<cr>
+set splitright "split to right by default 
+set splitbelow "split to bottom by default
+set winwidth=30
+set winheight=1
+set cmdwinheight=10
+set previewheight=8
+set helpheight=12
 
 "搜索设置
 set ignorecase
 nmap <silent> <Leader>c :noh<CR>
-command! C nohlsearch   " use :C to clear hlsearch
 
+"set spell
 set autoread
+" set number
+set hidden
+set title
+set titlelen=95
+set report=0
 
 " 展示设置
 set expandtab	 	" 将制表符扩展为空格
@@ -57,17 +71,19 @@ set lines=40 columns=120
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 
-set number
-"set relativenumber
-"function! NumberToggle()
-  "if(&relativenumber == 1)
-    "set norelativenumber
-  "else
-    "set relativenumber
-  "endif
-"endfunc
-"nnoremap <leader>n :call NumberToggle()<cr>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+xnoremap <Tab> >gv
+xnoremap <S-Tab> <gv
 
+
+" Complete setting
+set completeopt=menuone
+set completeopt+=noinsert
+set complete=.      "Don't complete from other buffer.
+set pumheight=20
+
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 "智能tab补全
 function! Tab_Or_Complete()
     let currentLine = getline('.')
@@ -81,4 +97,3 @@ function! Tab_Or_Complete()
         return "\<tab>"
     endif
 endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
