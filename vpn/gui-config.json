@@ -11,10 +11,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "hk50-k.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 1,
@@ -25,10 +25,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "hk149-v.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -39,10 +39,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "ali-hk196.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -53,10 +53,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "hk224-r.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -67,10 +67,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "hk235-g.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -81,10 +81,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp34-h.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -95,10 +95,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp47-y.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -109,10 +109,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp209-y.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -123,10 +123,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp57-v.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -137,10 +137,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp225-k.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -151,10 +151,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp166-o.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -165,10 +165,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "jp10-d.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -179,10 +179,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "ali-sg-63.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -193,10 +193,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "sg40-v.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -207,10 +207,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "sg64-u.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -221,10 +221,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "sg109-p.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -235,10 +235,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "sg110-d.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -249,10 +249,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "sg180-b.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -263,10 +263,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us63-j.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -277,10 +277,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us73-t.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -291,10 +291,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us75-d.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -305,10 +305,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us130-v.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -319,10 +319,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us156-f.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -333,10 +333,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us157-f.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -347,10 +347,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us215-b.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -361,10 +361,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us181-b.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -375,10 +375,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "us173-a.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -389,10 +389,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "fr34-d.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -403,10 +403,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "uk36-d.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -417,10 +417,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "de154-d.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -431,10 +431,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "fr70-v.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -445,10 +445,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "kr168-s.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       },
       {
          "ConnectedTimes" : 0,
@@ -459,10 +459,10 @@
          "charge_type" : 0,
          "enable" : true,
          "method" : "aes-256-cfb",
-         "password" : "ZjL13630446186",
+         "password" : "#placeholder",
          "remarks" : "",
          "server" : "hk41-o.s1u.pw",
-         "server_port" : 16740
+         "server_port" : #placeholder
       }
    ],
    "enable" : false,
