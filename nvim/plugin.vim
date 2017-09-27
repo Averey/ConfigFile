@@ -17,7 +17,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ternjs/tern_for_vim', {'build': 'npm install'}
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -85,13 +84,16 @@ let g:NERDTreeWinSize = 30
 
 " -------------deoplete-------------------------
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#ternjs#types = 1
 " deoplete-ternjs
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
-set splitbelow
-set completeopt+=noselect
-set completeopt-=preview
-autocmd CompleteDone * pclose
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'js',
+                \ 'javascript.jsx',
+                \ 'vue'
+                \]
 
 
 
@@ -124,7 +126,7 @@ nnoremap # :Ack! <C-r><c-w><cr>
 " ---------------------------------------------
 set rtp+=E:\GitRepo\configFile
 let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="\\"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = GitRepo . 'mySnips'

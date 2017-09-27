@@ -1,37 +1,69 @@
-snippet log "javascript common log"
-console.log(${1:logText});
+# JavaScript ES6 snippets
+
+# arrow function
+snippet => "Arrow function" i
+(${1}) => {
+	${2}
+}
 endsnippet
 
-snippet alog "angular $log"
-$log.info(${1:logText});
+# class
+snippet class "es6 class"
+class ${1:name} {
+	constructor(${2:arg}){
+		${3: //init}
+	}
+	${4}
+}
 endsnippet
 
-snippet db "javascript debugger"
-debugger;
+# forof
+snippet forof "for of ..."
+for(let ${1:s} of ${2:sequence}){
+	${3}
+}
 endsnippet
 
-snippet cb "class function bind"
-this.${1:function_name} = this.$1.bind(this);$0
+# import
+snippet im "import module"
+import ${1:foo} from '${2:bar}';
 endsnippet
 
-snippet cf "class function without function keyword"
-${1:function_name}(){
+# export
+snippet ex "export"
+export ${1:default} ${2:bar}
+endsnippet
+#---------------------------------------
+
+
+# my for loop
+snippet for "for loop"
+for ( let ${1:i} = ${2:0}; $1 < ${3:length}; $1++ ) {
 	$0
 }
 endsnippet
 
-snippet af= "arrow function"
-(${1:arguments}) => {
-  $0
-}
+# log
+snippet log "javascript common log"
+console.log(${1:logText});
 endsnippet
 
-snippet =af " asign arrow function"
-${1:function_name} = () => {
-  $0
-}
+# debugger
+snippet db "javascript debugger"
+debugger;
 endsnippet
 
+# class function bind
+snippet cb "class function bind"
+this.${1:function_name} = this.$1.bind(this);$0
+endsnippet
+
+# angular log
+snippet alog "angular $log"
+$log.info(${1:logText});
+endsnippet
+
+# angular custom component
 snippet ngc "angular component" b
 (function () {
   'use strict';
@@ -53,8 +85,10 @@ snippet ngc "angular component" b
 })();
 endsnippet
 
+# react class
 snippet rcl "common react class module"
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class ${1:classname} extends Component {
   constructor(props) {
@@ -62,9 +96,23 @@ class ${1:classname} extends Component {
   }
 
   render() {
-	$0
+	return (
+		$0
+	);
   }
 }
 
 export default $1;
+
+$1.PropTypes = {
+//ptionalArray: PropTypes.array,
+//ptionalBool: PropTypes.bool,
+//ptionalFunc: PropTypes.func,
+//ptionalNumber: PropTypes.number,
+//ptionalObject: PropTypes.object,
+//ptionalString: PropTypes.string,
+//ptionalSymbol: PropTypes.symbol,
+}
 endsnippet
+
+

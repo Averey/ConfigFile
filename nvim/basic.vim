@@ -7,8 +7,8 @@ set mouse=a
 " 默认键位优化
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
-nnoremap <silent> ' `
-nnoremap <silent> ` '
+" nnoremap <silent> ' `
+" nnoremap <silent> ` '
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
@@ -23,6 +23,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>m %
 nnoremap B 0
 nnoremap E $
+inoremap <S-Enter> <esc>A;<Enter>
 
 " 窗口设置
 nnoremap <Leader>j <C-w>j
@@ -62,6 +63,8 @@ set shiftwidth=4	" 设置格式化时制表符占用空格数
 set softtabstop=4	" 让 vim 把连续数量的空格视为一个制表符
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 set nowrap
 set cursorline
 set autoindent
@@ -78,10 +81,14 @@ xnoremap <S-Tab> <gv
 
 
 " Complete setting
+" set complete=.      "Don't complete from other buffer.
+set pumheight=20
+set splitbelow
 set completeopt=menuone
 set completeopt+=noinsert
-set complete=.      "Don't complete from other buffer.
-set pumheight=20
+set completeopt+=noselect
+set completeopt-=preview
+autocmd CompleteDone * pclose
 
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 "智能tab补全
@@ -97,3 +104,18 @@ function! Tab_Or_Complete()
         return "\<tab>"
     endif
 endfunction
+
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+    \   execute "normal! g`\"" |
+    \ endif
+
+augroup END
+
