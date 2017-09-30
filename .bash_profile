@@ -1,5 +1,6 @@
 alias gs='git status'
 alias ga='git add *'
 alias gc='git commit -m"$1"'
+alias gac='git commit -am"$1"'
 alias gl='git pull'
 alias gp='git push'
