@@ -10,7 +10,7 @@ nnoremap <silent> g, g,zz
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
-noremap <Leader>b :buf
+noremap <Leader>b :buf<space>
 
 "常用快捷键映射
 noremap <C-s> :wa<CR>
