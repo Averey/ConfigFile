@@ -7,11 +7,10 @@ set mouse=a
 " 默认键位优化
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
-" nnoremap <silent> ' `
-" nnoremap <silent> ` '
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
+noremap <Leader>b :buf
 
 "常用快捷键映射
 noremap <C-s> :wa<CR>
@@ -109,7 +108,6 @@ endfunction
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
   autocmd!
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   autocmd BufReadPost *
