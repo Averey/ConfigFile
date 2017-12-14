@@ -6,6 +6,7 @@ Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'joshdick/onedark.vim'
+Plug 'mhartington/oceanic-next'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
@@ -32,23 +33,20 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
 
 Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
 
 " color scheme
 "----------------------------------------
-"set background=dark
-"colorscheme hybrid
-" colorscheme molokai
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
-"let g:space_vim_dark_background = 235
-"colorscheme space-vim-dark
-syntax on
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+syntax enable
 colorscheme onedark
+" colorscheme oceanicNext
 
 
 " easy align
@@ -150,3 +148,20 @@ let g:ale_sign_error = '×'
 let g:ale_sign_warning = '▌'
 "let g:ale_sign_warning = '⋯'
 "let g:ale_sign_warning = '░'
+
+
+" pangloss/vim-javascript
+" -----------------------------------------------------------
+" let g:javascript_conceal_function             = "ƒ"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
+" let g:javascript_conceal_arrow_function       = "⇒"
+" let g:javascript_conceal_noarg_arrow_function = "🞅"
+" let g:javascript_conceal_underscore_arrow_function = "🞅"
+" set conceallevel=1

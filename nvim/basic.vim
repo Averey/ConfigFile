@@ -37,8 +37,6 @@ nnoremap <Leader>\ :vs<cr>
 nnoremap <Leader>- :sp<cr>
 set splitright "split to right by default 
 set splitbelow "split to bottom by default
-set winwidth=30
-set winheight=1
 set cmdwinheight=10
 set previewheight=8
 set helpheight=12
@@ -68,7 +66,6 @@ set nowrap
 set cursorline
 set autoindent
 set smartindent
-set lines=40 columns=120
 "set scrolloff=4     "4 lines above/below cursor when scrolling
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
@@ -82,7 +79,6 @@ xnoremap <S-Tab> <gv
 " Complete setting
 " set complete=.      "Don't complete from other buffer.
 set pumheight=20
-set splitbelow
 set completeopt=menuone
 set completeopt+=noinsert
 set completeopt+=noselect
