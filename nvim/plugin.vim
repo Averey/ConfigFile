@@ -2,16 +2,14 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
-Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
-Plug 'liuchengxu/space-vim-dark'
 Plug 'joshdick/onedark.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
@@ -28,12 +26,10 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-"Plug 'w0rp/ale'
-
+Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
-
 Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
+Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 
 call plug#end()
 
@@ -44,7 +40,7 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-syntax enable
+" colorscheme gruvbox
 colorscheme onedark
 " colorscheme oceanicNext
 

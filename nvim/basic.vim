@@ -1,12 +1,29 @@
-syntax enable
-set mouse=a
-
 " 禁用python2 防止与3冲突
  let g:loaded_python_provider = 1
+ let g:python_host_skip_check = 1
+
+"智能tab补全
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+function! Tab_Or_Complete()
+    let currentLine = getline('.')
+    let currentColumn= col('.')
+    let beforeChar = strpart(currentLine, currentColumn-2, 1)
+    let res = match(beforeChar, ' ')
+                                                
+    if(res == -1 && currentColumn > 1)
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+    endif
+endfunction
+
+" terminal setting
+tnoremap <Esc> <C-\><C-n>
 
 " 默认键位优化
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
+nnoremap n nzz
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
@@ -23,6 +40,7 @@ nnoremap <Leader>m %
 nnoremap B 0
 nnoremap E $
 inoremap <S-Enter> <esc>A;<Enter>
+
 
 " 窗口设置
 nnoremap <Leader>j <C-w>j
@@ -45,9 +63,8 @@ set helpheight=12
 set ignorecase
 nmap <silent> <Leader>c :noh<CR>
 
-"set spell
+" set spell
 set autoread
-" set number
 set hidden
 set title
 set titlelen=95
@@ -85,31 +102,4 @@ set completeopt+=noselect
 set completeopt-=preview
 autocmd CompleteDone * pclose
 
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-"智能tab补全
-function! Tab_Or_Complete()
-    let currentLine = getline('.')
-    let currentColumn= col('.')
-    let beforeChar = strpart(currentLine, currentColumn-2, 1)
-    let res = match(beforeChar, ' ')
-
-    if(res == -1 && currentColumn > 1)
-        return "\<C-N>"
-    else
-        return "\<tab>"
-    endif
-endfunction
-
-
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  autocmd!
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   execute "normal! g`\"" |
-    \ endif
-
-augroup END
 
