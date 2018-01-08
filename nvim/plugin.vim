@@ -1,4 +1,4 @@
-" vim-plug
+﻿" vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
@@ -6,6 +6,11 @@ Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'joshdick/onedark.vim'
+
+" complete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'zchee/deoplete-jedi'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
@@ -16,8 +21,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -30,7 +33,6 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'w0rp/ale'
 
 Plug 'mhinz/vim-startify'
-
 Plug 'mxw/vim-jsx'
 
 call plug#end()

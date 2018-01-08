@@ -1,8 +1,8 @@
-syntax enable
+﻿syntax enable
 set mouse=a
 
 " 禁用python2 防止与3冲突
- let g:loaded_python_provider = 1
+let g:loaded_python_provider = 1
 
 " 默认键位优化
 nnoremap <silent> g; g;zz
