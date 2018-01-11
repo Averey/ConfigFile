@@ -1,17 +1,35 @@
-﻿syntax enable
-set mouse=a
-
+﻿
 " 禁用python2 防止与3冲突
-let g:loaded_python_provider = 1
+ let g:loaded_python_provider = 1
+ let g:python_host_skip_check = 1
+
+"智能tab补全
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+function! Tab_Or_Complete()
+    let currentLine = getline('.')
+    let currentColumn= col('.')
+    let beforeChar = strpart(currentLine, currentColumn-2, 1)
+    let res = match(beforeChar, ' ')
+                                                
+    if(res == -1 && currentColumn > 1)
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+    endif
+endfunction
+
+" terminal setting
+tnoremap <Esc> <C-\><C-n>
+
 
 " 默认键位优化
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
-" nnoremap <silent> ' `
-" nnoremap <silent> ` '
+nnoremap n nzz
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
+noremap <Leader>b :buf<space>
 
 "常用快捷键映射
 noremap <C-s> :wa<CR>
@@ -23,7 +41,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>m %
 nnoremap B 0
 nnoremap E $
-inoremap <S-Enter> <esc>A;<Enter>
+
 
 " 窗口设置
 nnoremap <Leader>j <C-w>j
@@ -38,8 +56,6 @@ nnoremap <Leader>\ :vs<cr>
 nnoremap <Leader>- :sp<cr>
 set splitright "split to right by default 
 set splitbelow "split to bottom by default
-set winwidth=30
-set winheight=1
 set cmdwinheight=10
 set previewheight=8
 set helpheight=12
@@ -48,9 +64,8 @@ set helpheight=12
 set ignorecase
 nmap <silent> <Leader>c :noh<CR>
 
-"set spell
+" set spell
 set autoread
-" set number
 set hidden
 set title
 set titlelen=95
@@ -69,7 +84,6 @@ set nowrap
 set cursorline
 set autoindent
 set smartindent
-set lines=40 columns=120
 "set scrolloff=4     "4 lines above/below cursor when scrolling
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
@@ -83,39 +97,12 @@ xnoremap <S-Tab> <gv
 " Complete setting
 " set complete=.      "Don't complete from other buffer.
 set pumheight=20
-set splitbelow
 set completeopt=menuone
 set completeopt+=noinsert
 set completeopt+=noselect
 set completeopt-=preview
 autocmd CompleteDone * pclose
 
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-"智能tab补全
-function! Tab_Or_Complete()
-    let currentLine = getline('.')
-    let currentColumn= col('.')
-    let beforeChar = strpart(currentLine, currentColumn-2, 1)
-    let res = match(beforeChar, ' ')
-
-    if(res == -1 && currentColumn > 1)
-        return "\<C-N>"
-    else
-        return "\<tab>"
-    endif
-endfunction
-
-
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  autocmd!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   execute "normal! g`\"" |
-    \ endif
-
-augroup END
-
+" nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
+nnoremap <space>;  mqA;<esc>`q
+inoremap <S-Enter> <esc>A;<Enter>

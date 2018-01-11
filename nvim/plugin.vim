@@ -2,10 +2,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
-Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
-Plug 'liuchengxu/space-vim-dark'
 Plug 'joshdick/onedark.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
 
 " complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -15,14 +14,14 @@ Plug 'zchee/deoplete-jedi'
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
@@ -30,27 +29,23 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-"Plug 'w0rp/ale'
-
+Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx'
+Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 
 call plug#end()
 
 
 " color scheme
 "----------------------------------------
-"set background=dark
-"colorscheme hybrid
-" colorscheme molokai
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
-"let g:space_vim_dark_background = 235
-"colorscheme space-vim-dark
-syntax on
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+" colorscheme gruvbox
 colorscheme onedark
+" colorscheme oceanicNext
 
 
 " easy align
@@ -100,6 +95,7 @@ let g:deoplete#sources#ternjs#filetypes = [
 
 
 "--------------fzf----------------------------
+set rtp+=~/.fzf
 map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
 map <a-p> :History<cr>
@@ -126,7 +122,7 @@ nnoremap # :Ack! <C-r><c-w><cr>
 
 " ultisnips
 " ---------------------------------------------
-set rtp+=E:\GitRepo\configFile
+set rtp+=D:\GitRepo\configFile
 let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="\\"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -152,3 +148,20 @@ let g:ale_sign_error = '×'
 let g:ale_sign_warning = '▌'
 "let g:ale_sign_warning = '⋯'
 "let g:ale_sign_warning = '░'
+
+
+" pangloss/vim-javascript
+" -----------------------------------------------------------
+" let g:javascript_conceal_function             = "ƒ"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
+" let g:javascript_conceal_arrow_function       = "⇒"
+" let g:javascript_conceal_noarg_arrow_function = "🞅"
+" let g:javascript_conceal_underscore_arrow_function = "🞅"
+" set conceallevel=1
