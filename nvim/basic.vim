@@ -1,3 +1,4 @@
+﻿
 " 禁用python2 防止与3冲突
  let g:loaded_python_provider = 1
  let g:python_host_skip_check = 1
@@ -20,6 +21,7 @@ endfunction
 " terminal setting
 tnoremap <Esc> <C-\><C-n>
 
+
 " 默认键位优化
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
@@ -40,7 +42,6 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>m %
 nnoremap B 0
 nnoremap E $
-inoremap <S-Enter> <esc>A;<Enter>
 
 
 " 窗口设置
@@ -103,4 +104,6 @@ set completeopt+=noselect
 set completeopt-=preview
 autocmd CompleteDone * pclose
 
-
+" nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
+nnoremap <space>;  mqA;<esc>`q
+inoremap <S-Enter> <esc>A;<Enter>

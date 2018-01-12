@@ -1,4 +1,4 @@
-let GitRepo = 'E:\\GitRepo\\configFile\\'
+﻿let GitRepo = 'E:\\GitRepo\\configFile\\'
 let mapleader=" "
 "noremap \ ,
 

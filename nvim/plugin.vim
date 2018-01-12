@@ -1,10 +1,15 @@
-" vim-plug
+﻿" vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
 Plug 'joshdick/onedark.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'morhetz/gruvbox'
+
+" complete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'zchee/deoplete-jedi'
 
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
@@ -15,10 +20,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
@@ -92,6 +95,7 @@ let g:deoplete#sources#ternjs#filetypes = [
 
 
 "--------------fzf----------------------------
+set rtp+=~/.fzf
 map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
 map <a-p> :History<cr>
@@ -118,7 +122,7 @@ nnoremap # :Ack! <C-r><c-w><cr>
 
 " ultisnips
 " ---------------------------------------------
-" set rtp+=E:\GitRepo\configFile
+set rtp+=E:\GitRepo\configFile
 let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="\\"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
