@@ -24,6 +24,7 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
 nnoremap n nzz
+nnoremap * *N
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
