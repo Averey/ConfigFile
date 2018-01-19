@@ -3,8 +3,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 " color Scheme
 Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'mhartington/oceanic-next'
 Plug 'morhetz/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -44,8 +47,12 @@ if (has("termguicolors"))
 endif
 
 " colorscheme gruvbox
-colorscheme onedark
+" colorscheme onedark
 " colorscheme oceanicNext
+" let ayucolor="mirage" " for mirage version of theme
+" colorscheme ayu
+set background=dark
+colorscheme palenight
 
 
 " easy align
@@ -82,6 +89,7 @@ let g:NERDTreeWinSize = 30
 " -------------deoplete-------------------------
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#enable_refresh_always= 1
 " deoplete-ternjs
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete

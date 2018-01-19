@@ -21,12 +21,20 @@ endfunction
 " terminal setting
 tnoremap <Esc> <C-\><C-n>
 
+" 默认的重绘导致输入时有卡顿
+set lazyredraw
 
-" 默认键位优化
+" auto center(默认键位优化
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+nnoremap <silent> <C-o> <C-o>zz
+nnoremap <silent> <C-i> <C-i>zz
 nnoremap <silent> g; g;zz
 nnoremap <silent> g, g,zz
-nnoremap n nzz
-nnoremap * *N
 
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
@@ -45,10 +53,14 @@ nnoremap E $
 
 
 " 窗口设置
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
+" nnoremap <Leader>j <C-w>j
+" nnoremap <Leader>h <C-w>h
+" nnoremap <Leader>k <C-w>k
+" nnoremap <Leader>l <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 nnoremap <left> <C-w>4<
 nnoremap <right> <C-w>4>
 nnoremap <up> <C-w>4-
@@ -107,3 +119,6 @@ autocmd CompleteDone * pclose
 " nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
 nnoremap <space>;  mqA;<esc>`q
 inoremap <S-Enter> <esc>A;<Enter>
+
+" reselect last paste
+nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
