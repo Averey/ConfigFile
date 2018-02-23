@@ -10,16 +10,19 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
 
 " complete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'zchee/deoplete-jedi'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+"Plug 'zchee/deoplete-jedi'
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 
 Plug 'junegunn/vim-easy-align'
+c
 Plug 'yggdroot/indentline'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
@@ -31,11 +34,12 @@ Plug 'mileszs/ack.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
-Plug 'mxw/vim-jsx'
 Plug 'junegunn/goyo.vim', {'for': 'markdown'}
+
+Plug 'sheerun/vim-polyglot' 
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -66,16 +70,8 @@ nmap ga <Plug>(EasyAlign)
 " Indent line 
 "-----------------------------------------	
 let g:indentLine_char = '┊'
-" let g:indentLine_char = '¦'
 let indentLine_enabled = 0
 nmap <Leader>i :IndentLinesToggle<CR>
-
-
-
-"-------------airline setting--------------------
-let g:airline_powerline_fonts = 1
-let g:airline_detect_spell = 0
-
 
 " -------------nerdtree setting--------------
 map <Leader>t :NERDTreeToggle<CR>
@@ -101,19 +97,12 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \]
 
 
-
 "--------------fzf----------------------------
 set rtp+=~/.fzf
 map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
 map <a-p> :History<cr>
 map <a-h> :History:<cr>
-imap <c-x><c-l> <plug>(fzf-complete-line)
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 
 
 " ack.vim
@@ -127,7 +116,6 @@ nnoremap <Leader>g :Ack!<Space>
 nnoremap # :Ack! <C-r><c-w><cr>
 
 
-
 " ultisnips
 " ---------------------------------------------
 set rtp+=E:\GitRepo\configFile
@@ -138,16 +126,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = GitRepo . 'mySnips'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
 
-
-
-
-" auto-pairs
-" --------------------------------------------------
-"  avoid key mapping conflict with fzf
-let g:AutoPairsShortcutToggle = 'M-p'
-
-
-
 " ale
 " ----------------------------------------
 let g:ale_javascript_eslint_executable = 'eslint'
@@ -156,20 +134,3 @@ let g:ale_sign_error = '×'
 let g:ale_sign_warning = '▌'
 "let g:ale_sign_warning = '⋯'
 "let g:ale_sign_warning = '░'
-
-
-" pangloss/vim-javascript
-" -----------------------------------------------------------
-" let g:javascript_conceal_function             = "ƒ"
-" let g:javascript_conceal_null                 = "ø"
-" let g:javascript_conceal_this                 = "@"
-" let g:javascript_conceal_return               = "⇚"
-" let g:javascript_conceal_undefined            = "¿"
-" let g:javascript_conceal_NaN                  = "ℕ"
-" let g:javascript_conceal_prototype            = "¶"
-" let g:javascript_conceal_static               = "•"
-" let g:javascript_conceal_super                = "Ω"
-" let g:javascript_conceal_arrow_function       = "⇒"
-" let g:javascript_conceal_noarg_arrow_function = "🞅"
-" let g:javascript_conceal_underscore_arrow_function = "🞅"
-" set conceallevel=1
