@@ -17,7 +17,6 @@ Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 
 Plug 'junegunn/vim-easy-align'
-c
 Plug 'yggdroot/indentline'
 "Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
