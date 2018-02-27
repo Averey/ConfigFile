@@ -1,5 +1,4 @@
-﻿
-" 禁用python2 防止与3冲突
+﻿" 禁用python2 防止与3冲突
  let g:loaded_python_provider = 1
  let g:python_host_skip_check = 1
 
@@ -127,15 +126,17 @@ nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " custom statusline
 function! GitBranch() abort
+    return fugitive#head();
+    " let l:branchname =  fugitive#statusline();
+    " return l:branchname;
     "let l:branchname = system('git rev-parse --abbrev-ref HEAD') 2>/dev/null;
-     let l:branchname = fugitive#statusline();
-    return strlen(l:branchname) > 0 ? ' '.l:branchname.' ':'';
+    " return strlen(l:branchname) > 0 ? ' '.l:branchname.' ':'';
 endfunction
 set laststatus=2
 set statusline=
 set statusline+=%{fugitive#statusline()}
 set statusline+=\ %t    " filename
-set statusline+=%y    " filetype
+" set statusline+=%y    " filetype
 set statusline+=%=      " switch to the right side
 set statusline+=\[%{&fileencoding?&fileencoding:&encoding}\] "encoding
 set statusline+=\ %l      " current line number

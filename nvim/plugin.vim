@@ -17,7 +17,6 @@ Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 
 Plug 'junegunn/vim-easy-align'
-c
 Plug 'yggdroot/indentline'
 "Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -79,6 +78,7 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeShowBookmarks=1
 let NERDTreeIgnore = ['node_modules$[[dir]]']
 let g:NERDTreeWinSize = 30
 
