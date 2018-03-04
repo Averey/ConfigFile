@@ -130,7 +130,7 @@ nnoremap # :Ack! <C-r><c-w><cr>
 
 " ultisnips
 " ---------------------------------------------
-set rtp+=E:\GitRepo\configFile
+set rtp+=D:\GitRepo\configFile
 let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="\\"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
