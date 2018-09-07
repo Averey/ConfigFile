@@ -10,12 +10,14 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
 
 " complete
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-"Plug 'zchee/deoplete-jedi'
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'zchee/deoplete-jedi'
+"Plug 'roxma/nvim-completion-manager'
+"Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 
+
+Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
 "Plug 'vim-airline/vim-airline'
@@ -24,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 "Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -40,23 +43,19 @@ Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot' 
 Plug 'mxw/vim-jsx'
 
+Plug 'justinmk/vim-highlightedyank'
+
 call plug#end()
 
 
 " color scheme
 "----------------------------------------
 if (has("termguicolors"))
-    set termguicolors
+   set termguicolors
 endif
 
-" colorscheme gruvbox
-" colorscheme onedark
-" colorscheme oceanicNext
-" let ayucolor="mirage" " for mirage version of theme
-" colorscheme ayu
-set background=dark
 colorscheme palenight
-
+set background=dark
 
 " easy align
 " ---------------------------------------
@@ -72,7 +71,9 @@ let g:indentLine_char = '┊'
 let indentLine_enabled = 0
 nmap <Leader>i :IndentLinesToggle<CR>
 
-" -------------nerdtree setting--------------
+"---------- vim-dirvish---------------
+
+"-------------nerdtree setting--------------
 map <Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -101,9 +102,10 @@ let g:deoplete#sources#ternjs#filetypes = [
 set rtp+=~/.fzf
 map <c-p> :Files<cr>
 map <a-l> :Buffers<cr>
-map <a-p> :History<cr>
 map <a-h> :History:<cr>
-
+"Files command with preview window
+" command! -bang -nargs=? -complete=dir Files
+"   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " ack.vim
 " --------------------------------------
@@ -115,10 +117,9 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>g :Ack!<Space>
 nnoremap # :Ack! <C-r><c-w><cr>
 
-
 " ultisnips
 " ---------------------------------------------
-set rtp+=D:\GitRepo\configFile
+set rtp+=~/repo/ConfigFile
 let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="\\"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"

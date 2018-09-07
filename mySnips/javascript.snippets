@@ -90,8 +90,29 @@ snippet ngc "angular component" b
 })();
 endsnippet
 
+#setState 
+snippet ss "setState shortcut"
+this.setState({$0})
+endsnippet
+
 # react class
 snippet rcl "common react class module"
+import React, { Component } from "react";
+
+class ${1:classname} extends Component {
+  $0
+  render() {
+	  return (
+	    <div>$1</div>
+	  )
+  }
+}
+export default $1;
+
+endsnippet
+
+# react class
+snippet rcp "common react class with propTypes module"
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
@@ -103,7 +124,7 @@ class ${1:classname} extends Component {
   render() {
 	return (
 		<div>
-			$0
+			$1
 		</div>
 	);
   }

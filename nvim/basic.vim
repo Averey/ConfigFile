@@ -1,8 +1,4 @@
-﻿" 禁用python2 防止与3冲突
- let g:loaded_python_provider = 1
- let g:python_host_skip_check = 1
-
-"智能tab补全
+﻿"智能tab补全
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 function! Tab_Or_Complete()
     let currentLine = getline('.')
@@ -17,13 +13,30 @@ function! Tab_Or_Complete()
     endif
 endfunction
 
+" netrw setting
+" map <Leader>t :Lexplore<CR>
+" let g:netrw_liststyle=3 "tree style
+" let g:netrw_browse_split=2
+let g:netrw_winsize=15
+let g:netrw_banner=0
+let g:netrw_list_hide='node_modules,^\./$,^\../$'
+let g:netrw_hide=1
+nnoremap <Leader>d :Explore<CR>
+augroup custom_netrw
+    autocmd!
+    autocmd Filetype netrw nnoremap <buffer> <Esc> :Rex<Cr>
+augroup end
+
+
+
 " terminal setting
 tnoremap <Esc> <C-\><C-n>
 
 " 默认的重绘导致输入时有卡顿
 set lazyredraw
-" fixed the problem,switch buffer slowly, especially using airline
 set hidden 
+set mouse=a
+let g:did_install_default_menus = 1 " avoid useless menu.vim (saves ~100ms ?)
 
 " auto center(默认键位优化
 nnoremap <silent> n nzz
@@ -80,7 +93,6 @@ nmap <silent> <Leader>c :noh<CR>
 
 " set spell
 set autoread
-set hidden
 set title
 set titlelen=95
 set report=0
@@ -96,7 +108,6 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 set nowrap
 set cursorline
-set autoindent
 set smartindent
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
@@ -118,6 +129,7 @@ autocmd CompleteDone * pclose
 " nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
 nnoremap <space>;  mqA;<esc>`q
 nnoremap <space>,  mqA,<esc>`q
+nnoremap <space>:  mqA:<esc>`q
 inoremap <S-Enter> <esc>A;<Enter>
 
 " reselect last paste
@@ -144,3 +156,11 @@ set statusline+=/
 set statusline+=%L      "total line
 set statusline+=(%p%%)      "total line
 
+
+" abbreviate
+
+" open h buffer vertically
+ca h vert h
+
+" word correct
+ab dvi div
