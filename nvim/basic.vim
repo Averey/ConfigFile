@@ -1,4 +1,18 @@
-﻿"智能tab补全
+﻿" ===================
+" zR: open all folds
+" zM: close all folds
+"====================
+
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker foldlevel=0
+augroup end
+
+" avoid useless menu.vim (saves ~100ms ?)
+let g:did_install_default_menus = 1 
+
+" intelligent tab complete ----{{{
+"
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 function! Tab_Or_Complete()
     let currentLine = getline('.')
@@ -12,8 +26,10 @@ function! Tab_Or_Complete()
         return "\<Tab>"
     endif
 endfunction
+" }}}
 
-" netrw setting
+" netrw setting ----{{{
+"
 " map <Leader>t :Lexplore<CR>
 " let g:netrw_liststyle=3 "tree style
 " let g:netrw_browse_split=2
@@ -27,21 +43,15 @@ augroup custom_netrw
     autocmd Filetype netrw nnoremap <buffer> <Esc> :Rex<Cr>
     autocmd Filetype netrw nnoremap <buffer> <Leader>d :Rex<Cr>
 augroup end
+" }}}
 
-
-
-" terminal setting
+" terminal setting ---{{{
+"
 tnoremap <Esc> <C-\><C-n>
+" }}}
 
-" 默认的重绘导致输入时有卡顿
-set lazyredraw
-set hidden 
-set mouse=a
-let g:did_install_default_menus = 1 " avoid useless menu.vim (saves ~100ms ?)
-
-
-
-"shortcut mapping
+" mapping ------{{{
+"
 noremap <C-s> :wa<CR>
 noremap <Leader>y "+y
 noremap <Leader>p "+p
@@ -67,10 +77,14 @@ nnoremap <space>:  mqA:<esc>`q
 inoremap <S-Enter> <esc>A;<Enter>
 " reselect last paste
 nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
+"upppercase a word before cursor or current word
+imap <c-u> <esc>bgUawea
+nnoremap <c-u> gUaw
+nmap <silent> <Leader>c :noh<CR>
+" }}}
 
-
-
-" window setting
+" window setting --- {{{
+"
 nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
@@ -83,12 +97,15 @@ nnoremap <Leader>\ :vs<cr>
 nnoremap <Leader>- :sp<cr>
 set splitright "split to right by default 
 set splitbelow "split to bottom by default
+"}}}
 
-"search setting
+" option setting ----{{{
+"
+" 默认的重绘导致输入时有卡顿
+set lazyredraw
+set hidden 
+set mouse=a
 set ignorecase
-nmap <silent> <Leader>c :noh<CR>
-
-" set spell
 set autoread
 set title
 set titlelen=95
@@ -115,8 +132,10 @@ set pumheight=20
 set completeopt=menuone
 set completeopt-=preview
 autocmd CompleteDone * pclose
+" }}}
 
-" custom statusline
+" custom statusline ------{{{
+"
 function! GitBranch() abort
     return fugitive#head();
     " let l:branchname =  fugitive#statusline();
@@ -135,11 +154,13 @@ set statusline+=\ %l      " current line number
 set statusline+=/       
 set statusline+=%L      "total line
 set statusline+=(%p%%)      "total line
+" }}}
 
-
-" abbreviate
+" abbreviate ----{{{
+"
 " open h buffer vertically
 ca h vert h
 
 " word correct
 ab dvi div
+"}}}
