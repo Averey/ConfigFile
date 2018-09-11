@@ -25,6 +25,7 @@ nnoremap <Leader>d :Explore<CR>
 augroup custom_netrw
     autocmd!
     autocmd Filetype netrw nnoremap <buffer> <Esc> :Rex<Cr>
+    autocmd Filetype netrw nnoremap <buffer> <Leader>d :Rex<Cr>
 augroup end
 
 
@@ -38,27 +39,9 @@ set hidden
 set mouse=a
 let g:did_install_default_menus = 1 " avoid useless menu.vim (saves ~100ms ?)
 
-" auto center(默认键位优化
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
-nnoremap <silent> g* g*zz
-nnoremap <silent> g# g#zz
-nnoremap <silent> <C-o> <C-o>zz
-nnoremap <silent> <C-i> <C-i>zz
-nnoremap <silent> g; g;zz
-nnoremap <silent> g, g,zz
 
-xnoremap s :s//g<Left><Left>
-noremap <silent> - <C-^>
-noremap <Leader>b :buf<space>
 
-" Improve up/down movement on wrapped lines 
-nnoremap j gj
-nnoremap k gk
-
-"常用快捷键映射
+"shortcut mapping
 noremap <C-s> :wa<CR>
 noremap <Leader>y "+y
 noremap <Leader>p "+p
@@ -68,8 +51,26 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>m %
 nnoremap B 0
 nnoremap E $
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+xnoremap <Tab> >gv
+xnoremap <S-Tab> <gv
+xnoremap s :s//g<Left><Left>
+noremap <silent> - <C-^>
+noremap <Leader>b :buf<space>
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+" nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
+nnoremap <space>;  mqA;<esc>`q
+nnoremap <space>,  mqA,<esc>`q
+nnoremap <space>:  mqA:<esc>`q
+inoremap <S-Enter> <esc>A;<Enter>
+" reselect last paste
+nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 
+
+" window setting
 nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
@@ -80,14 +81,10 @@ nnoremap <up> <C-w>4-
 nnoremap <down> <C-w>4+
 nnoremap <Leader>\ :vs<cr>
 nnoremap <Leader>- :sp<cr>
-
 set splitright "split to right by default 
 set splitbelow "split to bottom by default
-set cmdwinheight=10
-set previewheight=8
-set helpheight=12
 
-"搜索设置
+"search setting
 set ignorecase
 nmap <silent> <Leader>c :noh<CR>
 
@@ -95,46 +92,29 @@ nmap <silent> <Leader>c :noh<CR>
 set autoread
 set title
 set titlelen=95
-set report=0
 
 " 展示设置
 set expandtab	 	" 将制表符扩展为空格
 set tabstop=4		" 设置编辑时制表符占用空格数
 set shiftwidth=4	" 设置格式化时制表符占用空格数
 set softtabstop=4	" 让 vim 把连续数量的空格视为一个制表符
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
-autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 set nowrap
 set cursorline
 set smartindent
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-
-
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-xnoremap <Tab> >gv
-xnoremap <S-Tab> <gv
-
+augroup my_filetype
+    autocmd!
+    autocmd Filetype html setlocal ts=2 sts=2 sw=2
+    autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+    autocmd Filetype css setlocal ts=2 sts=2 sw=2
+    autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+augroup end
 
 " Complete setting
 set pumheight=20
 set completeopt=menuone
-set completeopt+=noinsert
-set completeopt+=noselect
 set completeopt-=preview
 autocmd CompleteDone * pclose
-
-" nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
-nnoremap <space>;  mqA;<esc>`q
-nnoremap <space>,  mqA,<esc>`q
-nnoremap <space>:  mqA:<esc>`q
-inoremap <S-Enter> <esc>A;<Enter>
-
-" reselect last paste
-nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
 
 " custom statusline
 function! GitBranch() abort
@@ -158,7 +138,6 @@ set statusline+=(%p%%)      "total line
 
 
 " abbreviate
-
 " open h buffer vertically
 ca h vert h
 

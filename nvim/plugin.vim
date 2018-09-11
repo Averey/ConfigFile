@@ -17,7 +17,7 @@ Plug 'zchee/deoplete-jedi'
 "Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 
 
-Plug 'justinmk/vim-dirvish'
+" Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/vim-easy-align'
 Plug 'yggdroot/indentline'
 "Plug 'vim-airline/vim-airline'
@@ -71,7 +71,6 @@ let g:indentLine_char = '┊'
 let indentLine_enabled = 0
 nmap <Leader>i :IndentLinesToggle<CR>
 
-"---------- vim-dirvish---------------
 
 "-------------nerdtree setting--------------
 map <Leader>t :NERDTreeToggle<CR>
