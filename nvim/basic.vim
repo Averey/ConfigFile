@@ -50,6 +50,11 @@ augroup end
 tnoremap <Esc> <C-\><C-n>
 " }}}
 
+" setting ------{{{
+"
+set textwidth=80
+" }}}
+
 " mapping ------{{{
 "
 noremap <C-s> :wa<CR>
@@ -70,17 +75,16 @@ noremap <silent> - <C-^>
 noremap <Leader>b :buf<space>
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
-" nnoremap <space>; :execute 'normal! mqA;\<esc>`q'
 nnoremap <space>;  mqA;<esc>`q
 nnoremap <space>,  mqA,<esc>`q
 nnoremap <space>:  mqA:<esc>`q
 inoremap <S-Enter> <esc>A;<Enter>
 " reselect last paste
 nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
-"upppercase a word before cursor or current word
-imap <c-u> <esc>bgUawea
-nnoremap <c-u> gUaw
+"toggle a word case before cursor or current word
+map! <A-u> <Esc>gUiw`]a
 nmap <silent> <Leader>c :noh<CR>
+nnoremap <Leader>n :setlocal number!<cr>
 " }}}
 
 " window setting --- {{{
@@ -164,3 +168,8 @@ ca h vert h
 " word correct
 ab dvi div
 "}}}
+
+"demo case ---{{{
+"nnoremap <leader>s :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+"}}}
+

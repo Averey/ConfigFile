@@ -45,6 +45,8 @@ Plug 'mxw/vim-jsx'
 
 Plug 'justinmk/vim-highlightedyank'
 
+Plug '~/potion'
+
 call plug#end()
 
 
