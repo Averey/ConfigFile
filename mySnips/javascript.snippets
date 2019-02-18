@@ -7,6 +7,14 @@ snippet => "Arrow function" i
 }
 endsnippet
 
+# expression arrow function
+
+snippet ef "expression arrow function" i
+${1} = (${2}) => {
+	${3}
+}
+endsnippet
+
 # class
 snippet class "es6 class"
 class ${1:name} {
@@ -24,9 +32,14 @@ for(let ${1:s} of ${2:sequence}){
 }
 endsnippet
 
+# require
+snippet rq "require module"
+const ${1:module} = require("$1");
+endsnippet
+
 # import
 snippet im "import module"
-import ${1:foo} from '${2:bar}';
+import ${1:module} from "$1";
 endsnippet
 
 # export
@@ -95,11 +108,21 @@ snippet ss "setState shortcut"
 this.setState({$0})
 endsnippet
 
+#destructrue state 
+snippet ds "destructrue state shortcut"
+const { ${1} } = this.state;
+endsnippet
+
+#destructrue props 
+snippet dp "destructrue props shortcut"
+const { ${1} } = this.props;
+endsnippet
+
 # react class
 snippet rcl "common react class module"
 import React, { Component } from "react";
 
-class ${1:classname} extends Component {
+class ${1:`!v expand('%:t:r')`} extends Component {
   $0
   render() {
 	  return (
@@ -116,7 +139,7 @@ snippet rcp "common react class with propTypes module"
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class ${1:classname} extends Component {
+class ${1:`!v expand('%:t:r')`} extends Component {
   constructor(props) {
     super(props);
   }

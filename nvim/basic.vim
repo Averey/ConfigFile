@@ -29,20 +29,18 @@ endfunction
 " }}}
 
 " netrw setting ----{{{
-"
-" map <Leader>t :Lexplore<CR>
-" let g:netrw_liststyle=3 "tree style
-" let g:netrw_browse_split=2
-let g:netrw_winsize=15
-let g:netrw_banner=0
-let g:netrw_list_hide='node_modules,^\./$,^\../$'
-let g:netrw_hide=1
-nnoremap <Leader>d :Explore<CR>
-augroup custom_netrw
-    autocmd!
-    autocmd Filetype netrw nnoremap <buffer> <Esc> :Rex<Cr>
-    autocmd Filetype netrw nnoremap <buffer> <Leader>d :Rex<Cr>
-augroup end
+" use NERDTreeFind instead
+
+" let g:netrw_winsize=15
+" let g:netrw_banner=0
+" let g:netrw_list_hide='node_modules,^\./$,^\../$'
+" let g:netrw_hide=1
+" nnoremap <Leader>d :Explore<CR>
+" augroup custom_netrw
+"     autocmd!
+"     autocmd Filetype netrw nnoremap <buffer> <Esc> :Rex<Cr>
+"     autocmd Filetype netrw nnoremap <buffer> <Leader>d :Rex<Cr>
+" augroup end
 " }}}
 
 " terminal setting ---{{{

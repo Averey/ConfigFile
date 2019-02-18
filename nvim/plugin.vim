@@ -76,6 +76,7 @@ nmap <Leader>i :IndentLinesToggle<CR>
 
 "-------------nerdtree setting--------------
 map <Leader>t :NERDTreeToggle<CR>
+map <Leader>d :NERDTreeFind<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeMinimalUI = 1
