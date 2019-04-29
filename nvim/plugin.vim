@@ -1,6 +1,8 @@
 ﻿" vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'dhruvasagar/vim-zoom'
+
 " color Scheme
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
@@ -122,9 +124,9 @@ nnoremap # :Ack! <C-r><c-w><cr>
 " ultisnips
 " ---------------------------------------------
 set rtp+=~/repo/ConfigFile
-let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsJumpForwardTrigger="\\"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = GitRepo . 'mySnips'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]

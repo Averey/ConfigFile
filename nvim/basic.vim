@@ -11,6 +11,20 @@ augroup end
 " avoid useless menu.vim (saves ~100ms ?)
 let g:did_install_default_menus = 1 
 
+" augroup ---------{{{
+augroup wx_mini
+    au!
+    autocmd BufNewFile,BufRead *.wxml set filetype=html
+    autocmd BufNewFile,BufRead *.wxss set filetype=css
+    autocmd BufNewFile,BufRead *.wxs set filetype=javascript
+augroup END
+
+
+" syntax highlight for markdown
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+" }}}
+
+
 " intelligent tab complete ----{{{
 "
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
@@ -49,7 +63,9 @@ tnoremap <Esc> <C-\><C-n>
 " }}}
 
 " setting ------{{{
-"
+
+" incremental replace
+set inccommand=nosplit
 set textwidth=80
 " }}}
 

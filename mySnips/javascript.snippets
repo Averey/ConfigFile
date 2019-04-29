@@ -7,7 +7,11 @@ snippet => "Arrow function" i
 }
 endsnippet
 
-# expression arrow function
+snippet fe "function expression"
+const ${1} = (${3}) => {
+	${2}
+}
+endsnippet
 
 snippet ef "expression arrow function" i
 ${1} = (${2}) => {
@@ -118,6 +122,24 @@ snippet dp "destructrue props shortcut"
 const { ${1} } = this.props;
 endsnippet
 
+# useState
+snippet us "useState"
+const [$1, set${1/\w+/\u$0/}] = useState($0);
+endsnippet
+
+# react hook component
+snippet rch "react hook component"
+import React, { useState } from "react";
+
+export default function `!v expand('%:t:r')` () {
+	return (
+		<div>
+			$0
+		</div>
+  );
+}
+endsnippet
+
 # react class
 snippet rcl "common react class module"
 import React, { Component } from "react";
@@ -164,6 +186,11 @@ $1.propTypes = {
 //optionalString: PropTypes.string,
 //optionalSymbol: PropTypes.symbol,
 }
+endsnippet
+
+# 小程序
+snippet sd "mini setData"
+this.setData({$1})
 endsnippet
 
 
