@@ -24,7 +24,6 @@ augroup END
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " }}}
 
-
 " intelligent tab complete ----{{{
 "
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
@@ -81,14 +80,15 @@ nnoremap <Leader>m %
 nnoremap B 0
 nnoremap E $
 nnoremap <Tab> >>
+nnoremap <C-i> <Tab> 
 nnoremap <S-Tab> <<
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
 xnoremap s :s//g<Left><Left>
 noremap <silent> - <C-^>
 noremap <Leader>b :buf<space>
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
+" nnoremap <silent> n nzz
+" nnoremap <silent> N Nzz
 nnoremap <space>;  mqA;<esc>`q
 nnoremap <space>,  mqA,<esc>`q
 nnoremap <space>:  mqA:<esc>`q
@@ -99,6 +99,7 @@ nnoremap <expr> sp '`[' . strpart(getregtype(), 0, 1) . '`]'
 map! <A-u> <Esc>gUiw`]a
 nmap <silent> <Leader>c :noh<CR>
 nnoremap <Leader>n :setlocal number!<cr>
+nnoremap zff zf%
 " }}}
 
 " window setting --- {{{
@@ -144,6 +145,9 @@ augroup my_filetype
     autocmd Filetype css setlocal ts=2 sts=2 sw=2
     autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 augroup end
+
+" setting comment text italic
+highlight Comment cterm=italic gui=italic
 
 " Complete setting
 set pumheight=20

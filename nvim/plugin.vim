@@ -45,7 +45,8 @@ Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot' 
 Plug 'mxw/vim-jsx'
 
-Plug 'justinmk/vim-highlightedyank'
+Plug 'pangloss/vim-javascript'
+Plug 'machakann/vim-highlightedyank'
 
 Plug '~/potion'
 
@@ -124,9 +125,12 @@ nnoremap # :Ack! <C-r><c-w><cr>
 " ultisnips
 " ---------------------------------------------
 set rtp+=~/repo/ConfigFile
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="\\"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = GitRepo . 'mySnips'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mySnips"]
