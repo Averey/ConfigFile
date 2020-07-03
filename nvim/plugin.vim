@@ -45,6 +45,9 @@ Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 Plug 'sheerun/vim-polyglot' 
 Plug 'mxw/vim-jsx'
 
+Plug 'posva/vim-vue'
+let g:vue_disable_pre_processors = 1
+
 Plug 'pangloss/vim-javascript'
 Plug 'machakann/vim-highlightedyank'
 

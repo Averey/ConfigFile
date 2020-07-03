@@ -14,8 +14,8 @@ const ${1} = (${3}) => {
 endsnippet
 
 snippet ef "expression arrow function" i
-${1} = (${2}) => {
-	${3}
+const ${1} = (${3}) => {
+	${2}
 }
 endsnippet
 
@@ -38,12 +38,12 @@ endsnippet
 
 # require
 snippet rq "require module"
-const ${1:module} = require("$1");
+const ${1:module} = require("$1")
 endsnippet
 
 # import
 snippet im "import module"
-import ${1:module} from "$1";
+import ${1:module} from "$1"
 endsnippet
 
 # export
@@ -62,50 +62,29 @@ endsnippet
 
 # log
 snippet log "javascript common log"
-console.log(${1:logText});
+console.log(${1:logText})
 endsnippet
 
 # table log
 snippet logt "javascript table log"
-console.table(${1:logText});
+console.table(${1:logText})
 endsnippet
 
 # debugger
 snippet db "javascript debugger"
-debugger;
+debugger
 endsnippet
 
 # class function bind
 snippet cb "class function bind"
-this.${1:function_name} = this.$1.bind(this);$0
+this.${1:function_name} = this.$1.bind(this)$0
 endsnippet
 
 # angular log
 snippet alog "angular $log"
-$log.info(${1:logText});
+$log.info(${1:logText})
 endsnippet
 
-# angular custom component
-snippet ngc "angular component" b
-(function () {
-  'use strict';
-
-  angular
-    .module('${3:moduleName}')
-    .component('${1:componentName}', {
-      templateUrl: '${2:templateUrl}',
-      controller: $1Controller,
-      controllerAs: 'vm',
-    });
-
-    /**@ngInject */
-    function $1Controller() {
-      var vm = this;
-
-	  $0
-    }
-})();
-endsnippet
 
 #setState 
 snippet ss "setState shortcut"
@@ -114,35 +93,40 @@ endsnippet
 
 #destructrue state 
 snippet ds "destructrue state shortcut"
-const { ${1} } = this.state;
+const { ${1} } = this.state
 endsnippet
 
 #destructrue props 
 snippet dp "destructrue props shortcut"
-const { ${1} } = this.props;
+const { ${1} } = this.props
 endsnippet
 
-# useState
+snippet ue "useEffect"
+useEffect(() => {
+	$1
+}${0:,[]})
+endsnippet
+
 snippet us "useState"
-const [$1, set${1/\w+/\u$0/}] = useState($0);
+const [$1, set${1/\w+/\u$0/}] = useState($0)
 endsnippet
 
 # react hook component
-snippet rch "react hook component"
-import React, { useState } from "react";
+snippet rhc "react hook component"
+import React, { useState, useEffect } from "react"
 
 export default function `!v expand('%:t:r')` () {
 	return (
 		<div>
 			$0
 		</div>
-  );
+  )
 }
 endsnippet
 
 # react class
 snippet rcl "common react class module"
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 class ${1:`!v expand('%:t:r')`} extends Component {
   $0
@@ -152,18 +136,18 @@ class ${1:`!v expand('%:t:r')`} extends Component {
 	  )
   }
 }
-export default $1;
+export default $1
 
 endsnippet
 
 # react class
 snippet rcp "common react class with propTypes module"
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react"
+import PropTypes from "prop-types"
 
 class ${1:`!v expand('%:t:r')`} extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
@@ -171,11 +155,11 @@ class ${1:`!v expand('%:t:r')`} extends Component {
 		<div>
 			$1
 		</div>
-	);
+	)
   }
 }
 
-export default $1;
+export default $1
 
 $1.propTypes = {
 //optionalArray: PropTypes.array,
@@ -188,9 +172,40 @@ $1.propTypes = {
 }
 endsnippet
 
+# TODO
+snippet td; "TODO"
+// TODO:  
+endsnippet
+
+
 # 小程序
 snippet sd "mini setData"
 this.setData({$1})
 endsnippet
 
+
+# jsx {{{
+snippet btn "antd button link"
+<Button>
+  $1
+</Button>
+endsnippet
+snippet btnl "antd button link"
+<Button type='link'>
+  $1
+</Button>
+endsnippet
+snippet btnp "antd button link"
+<Button type='primary'>
+  $1
+</Button>
+endsnippet
+
+snippet div "div tag"
+<div>$1</div>
+endsnippet
+snippet div. "div tag"
+<div className='$1'>$2</div>
+endsnippet
+#}}}
 

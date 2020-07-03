@@ -25,6 +25,22 @@ snippet v. "view class"
 <view class="${1}">${2}</view>
 endsnippet
 
+snippet vi "view if"
+<view wx:if="{{${1}}}">${2}</view>
+endsnippet
+
+snippet vf "view for"
+<view wx:for="{{${1}}}" wx:key="${2:id}">${2}</view>
+endsnippet
+
+snippet ti "text if"
+<text wx:if="{{${1}}}">${2}</text>
+endsnippet
+
+snippet tf "text for"
+<text wx:for="{{${1}}}" wx:key="${2:id}">${2}</text>
+endsnippet
+
 snippet t "text"
 <text>${1}</text>
 endsnippet
