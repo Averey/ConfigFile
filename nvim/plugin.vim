@@ -1,15 +1,14 @@
 ﻿" vim-plug
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'dhruvasagar/vim-zoom'
+" Plug 'dhruvasagar/vim-zoom'
+Plug 'vim-scripts/ZoomWin'
+" Plug 'ap/vim-css-color'
+" Plug 'gko/vim-coloresque'
 
 " color Scheme
 Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
-Plug 'mhartington/oceanic-next'
-Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
 
 " complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -64,6 +63,8 @@ endif
 
 colorscheme palenight
 set background=dark
+" 透明背景
+hi! Normal ctermbg=NONE guibg=NONE 
 
 " easy align
 " ---------------------------------------
@@ -118,7 +119,8 @@ map <a-h> :History:<cr>
 " ack.vim
 " --------------------------------------
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+"  let g:ackprg = 'rg --vimgrep'
+   let g:ackprg = 'rg --vimgrep'
 endif
 let g:ackhighlight = 1
 cnoreabbrev Ack Ack!
