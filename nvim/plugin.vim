@@ -11,11 +11,12 @@ Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " complete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'zchee/deoplete-jedi'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'zchee/deoplete-jedi'
 "Plug 'roxma/nvim-completion-manager'
 "Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " Plug 'justinmk/vim-dirvish'
@@ -32,20 +33,23 @@ Plug 'tpope/vim-repeat'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+"Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 Plug 'mileszs/ack.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'andymass/vim-matchup'
 "Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/goyo.vim', {'for': 'markdown'}
 
 Plug 'sheerun/vim-polyglot' 
 Plug 'mxw/vim-jsx'
+"
 
-Plug 'posva/vim-vue'
-let g:vue_disable_pre_processors = 1
+"Plug 'posva/vim-vue'
+"let g:vue_disable_pre_processors = 1
 
 Plug 'pangloss/vim-javascript'
 Plug 'machakann/vim-highlightedyank'
@@ -64,7 +68,8 @@ endif
 colorscheme palenight
 set background=dark
 " 透明背景
-hi! Normal ctermbg=NONE guibg=NONE 
+" hi! Normal ctermbg=NONE guibg=NONE 
+hi! Normal ctermbg=NONE 
 
 " easy align
 " ---------------------------------------
@@ -105,6 +110,26 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'javascript.jsx',
                 \ 'vue'
                 \]
+
+"--------------coc.vim----------------------------
+" TextEdit might fail if hidden is not set.
+set hidden
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup"
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=500
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 
 "--------------fzf----------------------------

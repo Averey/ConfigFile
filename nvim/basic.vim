@@ -122,6 +122,7 @@ set splitbelow "split to bottom by default
 "
 " 默认的重绘导致输入时有卡顿
 set lazyredraw
+set redrawtime=10000  "文件buffer过大时， 语法高亮失败: redrawtime exceeded"
 set hidden 
 set mouse=a
 set ignorecase
